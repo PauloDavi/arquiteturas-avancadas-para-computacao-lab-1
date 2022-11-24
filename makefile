@@ -1,4 +1,6 @@
 CC = g++
+CUCOMP = nvcc
+CFLAGS =
 
 run:
 	./test.sh
@@ -14,3 +16,10 @@ compile_thread: calculo_pi_multi_thread.cpp
 
 run_thread: compile_thread
 	multitime -n 5 ./calculo_pi_multi_thread $(ARGS)
+
+## CUDA
+run_cuda: cuda_thread.o
+	$(CUCOMP) $(CFLAGS) cuda_thread.o -o run_cuda
+
+cuda_thread.o: cuda_thread.cu
+	$(CUCOMP) $(CFLAGS) -c cuda_thread.cu
