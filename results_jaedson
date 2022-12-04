@@ -1,0 +1,340 @@
+Single Thread
+DX = 1000
+===> multitime results
+1: ./calculo_pi_single_thread 1000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.001       0.002       0.002       
+user        0.002       0.000       0.001       0.001       0.002       
+sys         0.000       0.000       0.000       0.000       0.000       
+Valor da integral de pi: 3.142592487
+
+DX = 10000
+===> multitime results
+1: ./calculo_pi_single_thread 10000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.001       0.002       0.002       
+user        0.001       0.000       0.001       0.002       0.002       
+sys         0.000       0.000       0.000       0.000       0.000       
+Valor da integral de pi: 3.141892652
+
+DX = 100000
+===> multitime results
+1: ./calculo_pi_single_thread 100000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.002       0.002       0.002       
+user        0.002       0.000       0.002       0.002       0.002       
+sys         0.000       0.000       0.000       0.000       0.000       
+Valor da integral de pi: 3.141622654
+
+DX = 1000000
+===> multitime results
+1: ./calculo_pi_single_thread 1000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.005       0.000       0.005       0.005       0.005       
+user        0.004       0.001       0.002       0.005       0.005       
+sys         0.001       0.001       0.000       0.000       0.002       
+Valor da integral de pi: 3.141593654
+
+DX = 10000000
+===> multitime results
+1: ./calculo_pi_single_thread 10000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.035       0.000       0.034       0.034       0.035       
+user        0.034       0.002       0.031       0.034       0.035       
+sys         0.001       0.002       0.000       0.000       0.004       
+Valor da integral de pi: 3.141592954
+
+DX = 100000000
+===> multitime results
+1: ./calculo_pi_single_thread 100000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.332       0.001       0.331       0.332       0.334       
+user        0.330       0.002       0.327       0.331       0.332       
+sys         0.002       0.002       0.000       0.000       0.004       
+Valor da integral de pi: 3.141592663
+
+DX = 1000000000
+===> multitime results
+1: ./calculo_pi_single_thread 1000000000
+            Mean        Std.Dev.    Min         Median      Max
+real        3.300       0.003       3.295       3.299       3.305       
+user        3.298       0.004       3.294       3.297       3.304       
+sys         0.001       0.002       0.000       0.000       0.004       
+Valor da integral de pi: 3.141592669
+
+
+Multi Thread
+Threads = 2
+DX = 1000
+===> multitime results
+1: ./calculo_pi_multi_thread 2 1000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.002       0.002       0.002       
+user        0.002       0.000       0.002       0.002       0.002       
+sys         0.000       0.000       0.000       0.000       0.000       
+Valor da integral de pi: 3.139392487
+
+Threads = 2
+DX = 10000
+===> multitime results
+1: ./calculo_pi_multi_thread 2 10000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.002       0.002       0.002       
+user        0.001       0.001       0.000       0.002       0.002       
+sys         0.000       0.001       0.000       0.000       0.002       
+Valor da integral de pi: 3.141892652
+
+Threads = 2
+DX = 100000
+===> multitime results
+1: ./calculo_pi_multi_thread 2 100000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.002       0.002       0.002       
+user        0.002       0.000       0.002       0.002       0.002       
+sys         0.000       0.000       0.000       0.000       0.000       
+Valor da integral de pi: 3.141590654
+
+Threads = 2
+DX = 1000000
+===> multitime results
+1: ./calculo_pi_multi_thread 2 1000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.003       0.000       0.003       0.003       0.003       
+user        0.004       0.002       0.000       0.005       0.005       
+sys         0.001       0.002       0.000       0.000       0.005       
+Valor da integral de pi: 3.141593654
+
+Threads = 2
+DX = 10000000
+===> multitime results
+1: ./calculo_pi_multi_thread 2 10000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.018       0.000       0.018       0.018       0.018       
+user        0.034       0.002       0.031       0.035       0.035       
+sys         0.001       0.002       0.000       0.000       0.004       
+Valor da integral de pi: 3.141592634
+
+Threads = 2
+DX = 100000000
+===> multitime results
+1: ./calculo_pi_multi_thread 2 100000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.168       0.003       0.167       0.167       0.174       
+user        0.334       0.007       0.327       0.332       0.346       
+sys         0.001       0.002       0.000       0.000       0.004       
+Valor da integral de pi: 3.141592662
+
+Threads = 2
+DX = 1000000000
+===> multitime results
+1: ./calculo_pi_multi_thread 2 1000000000
+            Mean        Std.Dev.    Min         Median      Max
+real        1.658       0.003       1.654       1.660       1.662       
+user        3.310       0.006       3.303       3.310       3.319       
+sys         0.000       0.000       0.000       0.000       0.000       
+Valor da integral de pi: 3.141592668
+
+Threads = 4
+DX = 1000
+===> multitime results
+1: ./calculo_pi_multi_thread 4 1000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.002       0.002       0.002       
+user        0.002       0.001       0.000       0.002       0.002       
+sys         0.000       0.001       0.000       0.000       0.002       
+Valor da integral de pi: 3.133067781
+
+Threads = 4
+DX = 10000
+===> multitime results
+1: ./calculo_pi_multi_thread 4 10000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.002       0.002       0.002       
+user        0.002       0.000       0.002       0.002       0.002       
+sys         0.000       0.000       0.000       0.000       0.000       
+Valor da integral de pi: 3.141892652
+
+Threads = 4
+DX = 100000
+===> multitime results
+1: ./calculo_pi_multi_thread 4 100000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.002       0.002       0.002       
+user        0.002       0.000       0.002       0.002       0.003       
+sys         0.000       0.000       0.000       0.000       0.000       
+Valor da integral de pi: 3.141553007
+
+Threads = 4
+DX = 1000000
+===> multitime results
+1: ./calculo_pi_multi_thread 4 1000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.003       0.000       0.003       0.003       0.003       
+user        0.005       0.003       0.000       0.006       0.007       
+sys         0.002       0.003       0.000       0.000       0.007       
+Valor da integral de pi: 3.141587329
+
+Threads = 4
+DX = 10000000
+===> multitime results
+1: ./calculo_pi_multi_thread 4 10000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.014       0.000       0.013       0.014       0.014       
+user        0.048       0.002       0.045       0.049       0.049       
+sys         0.001       0.002       0.000       0.000       0.004       
+Valor da integral de pi: 3.141592257
+
+Threads = 4
+DX = 100000000
+===> multitime results
+1: ./calculo_pi_multi_thread 4 100000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.122       0.002       0.120       0.121       0.126       
+user        0.469       0.004       0.461       0.470       0.473       
+sys         0.002       0.002       0.000       0.004       0.004       
+Valor da integral de pi: 3.141592637
+
+Threads = 4
+DX = 1000000000
+===> multitime results
+1: ./calculo_pi_multi_thread 4 1000000000
+            Mean        Std.Dev.    Min         Median      Max
+real        1.199       0.013       1.191       1.192       1.224       
+user        4.707       0.014       4.680       4.715       4.717       
+sys         0.002       0.003       0.000       0.000       0.008       
+Valor da integral de pi: 3.141592668
+
+Threads = 8
+DX = 1000
+===> multitime results
+1: ./calculo_pi_multi_thread 8 1000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.002       0.002       0.002       
+user        0.001       0.001       0.000       0.002       0.002       
+sys         0.001       0.001       0.000       0.000       0.002       
+Valor da integral de pi: 3.122480579
+
+Threads = 8
+DX = 10000
+===> multitime results
+1: ./calculo_pi_multi_thread 8 10000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.002       0.002       0.002       
+user        0.001       0.001       0.000       0.000       0.002       
+sys         0.001       0.001       0.000       0.002       0.002       
+Valor da integral de pi: 3.141498806
+
+Threads = 8
+DX = 100000
+===> multitime results
+1: ./calculo_pi_multi_thread 8 100000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.002       0.000       0.002       0.002       0.002       
+user        0.002       0.001       0.000       0.003       0.003       
+sys         0.000       0.001       0.000       0.000       0.002       
+Valor da integral de pi: 3.141517938
+
+Threads = 8
+DX = 1000000
+===> multitime results
+1: ./calculo_pi_multi_thread 8 1000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.003       0.000       0.003       0.003       0.003       
+user        0.006       0.001       0.003       0.007       0.007       
+sys         0.001       0.001       0.000       0.000       0.003       
+Valor da integral de pi: 3.141578249
+
+Threads = 8
+DX = 10000000
+===> multitime results
+1: ./calculo_pi_multi_thread 8 10000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.014       0.001       0.014       0.014       0.016       
+user        0.048       0.001       0.046       0.048       0.049       
+sys         0.001       0.002       0.000       0.000       0.004       
+Valor da integral de pi: 3.141591513
+
+Threads = 8
+DX = 100000000
+===> multitime results
+1: ./calculo_pi_multi_thread 8 100000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.123       0.001       0.122       0.123       0.125       
+user        0.469       0.004       0.463       0.472       0.473       
+sys         0.002       0.003       0.000       0.000       0.008       
+Valor da integral de pi: 3.141592586
+
+Threads = 8
+DX = 1000000000
+===> multitime results
+1: ./calculo_pi_multi_thread 8 1000000000
+            Mean        Std.Dev.    Min         Median      Max
+real        1.210       0.026       1.192       1.199       1.261       
+user        4.694       0.024       4.646       4.703       4.711       
+sys         0.005       0.002       0.004       0.004       0.008       
+Valor da integral de pi: 3.14159266
+
+
+CUDA
+DX = 1000
+===> multitime results
+1: ./cuda_thread 1000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.080       0.011       0.061       0.080       0.092       
+user        0.010       0.004       0.004       0.008       0.016       
+sys         0.054       0.008       0.045       0.052       0.067       
+Valor da integral de pi: 3.14159273692312
+
+DX = 10000
+===> multitime results
+1: ./cuda_thread 10000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.082       0.012       0.060       0.085       0.098       
+user        0.006       0.002       0.004       0.004       0.008       
+sys         0.060       0.006       0.053       0.057       0.072       
+Valor da integral de pi: 3.14159265442313
+
+DX = 100000
+===> multitime results
+1: ./cuda_thread 100000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.084       0.004       0.079       0.085       0.089       
+user        0.010       0.007       0.004       0.008       0.023       
+sys         0.055       0.010       0.038       0.059       0.066       
+Valor da integral de pi: 3.14159265359816
+
+DX = 1000000
+===> multitime results
+1: ./cuda_thread 1000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.085       0.003       0.081       0.087       0.088       
+user        0.011       0.004       0.004       0.012       0.017       
+sys         0.056       0.006       0.049       0.055       0.067       
+Valor da integral de pi: 3.14159265358985
+
+DX = 10000000
+===> multitime results
+1: ./cuda_thread 10000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.094       0.004       0.088       0.096       0.099       
+user        0.018       0.003       0.016       0.017       0.023       
+sys         0.057       0.003       0.055       0.056       0.063       
+Valor da integral de pi: 3.14159265358975
+
+DX = 100000000
+===> multitime results
+1: ./cuda_thread 100000000
+            Mean        Std.Dev.    Min         Median      Max
+real        0.174       0.010       0.156       0.174       0.189       
+user        0.103       0.003       0.097       0.103       0.106       
+sys         0.056       0.005       0.051       0.052       0.065       
+Valor da integral de pi: 3.14159265358991
+
+DX = 1000000000
+===> multitime results
+1: ./cuda_thread 1000000000
+            Mean        Std.Dev.    Min         Median      Max
+real        1.020       0.001       1.019       1.020       1.022       
+user        0.949       0.006       0.940       0.947       0.957       
+sys         0.054       0.007       0.044       0.056       0.064       
+Valor da integral de pi: 3.14159265358979

@@ -11,7 +11,7 @@ double interger_pi(double start, double stop, double dx)
 
   while (x <= stop)
   {
-    pi += 4.0 / (1.0 + pow(x, 2));
+    pi += 4.0 / (1.0 + x * x);
     x = x + dx;
   }
 

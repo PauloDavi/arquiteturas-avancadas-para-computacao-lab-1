@@ -1,66 +1,60 @@
+// Using CUDA device to calculate pi
 #include <stdio.h>
 #include <iostream>
 #include <iomanip>
-#include <cuda.h>
 
-#include "cuda_runtime.h"
-#include "device_launch_parameters.h"
+#define NUM_BLOCK 512	 // Number of thread blocks
+#define NUM_THREAD 512 // Number of threads per block
 
 using namespace std;
 
-__device__ double d_pi;
-
-double f(double x)
+// Kernel that executes on the CUDA device
+__global__ void cal_pi(double *sum, int n, double step)
 {
-  return 4.0 / (1.0 + x * x);
+	// Sequential thread index across the blocks
+	int idx = blockIdx.x * blockDim.x + threadIdx.x;
+	for (int i = idx; i < n; i += NUM_THREAD * NUM_BLOCK)
+	{
+		double x = (i + 0.5) * step;
+		sum[idx] += 4.0 / (1.0 + x * x);
+	}
 }
 
-__global__ void add_vectors(double *a, double size) {
-  int id = blockDim.x * blockIdx.x + threadIdx.x;
-  if (id < size) a[id] = f(a[id]);
-
-	typedef cub::BlockReduce<double, size> BlockReduce;
-
-	__shared__ typename BlockReduce::TempStorage temp_storage;
-
-	d_pi = BlockReduce(temp_storage).Sum(a);	
-}
-
+// Main routine that executes on the host
 int main(int argc, char *argv[])
 {
-  if (argc != 2)
-  {
-    cout << "Usage: " << argv[0] << " <delta x>" << endl;
-    return 1;
-  }
+	if (argc != 2)
+	{
+		cout << "Usage: " << argv[0] << " <delta x>" << endl;
+		return 1;
+	}
 
-  double array_size = atof(argv[1]);
-  dx = 1.0 / array_size;
+	double n = atoi(argv[1]);
+	double step = 1 / n;
+	size_t size = NUM_BLOCK * NUM_THREAD * sizeof(double); // Array memory size
+	double *sumDev;
+	// Allocate array on device
+	cudaMalloc((void **)&sumDev, size);
+	// Initialize array in device to 0
+	cudaMemset(sumDev, 0, size);
+	// Do calculation on device
+	cal_pi<<<NUM_BLOCK, NUM_THREAD>>>(sumDev, n, step); // call CUDA kernel
 
-  size_t bytes = array_size * sizeof(double);
+	// Retrieve result from device and store it in host array
+	double *sumHost = (double *)malloc(size);
+	cudaMemcpy(sumHost, sumDev, size, cudaMemcpyDeviceToHost);
 
-  double *A = (double *)malloc(bytes);
+	double pi = 0;
+	for (int tid = 0; tid < NUM_THREAD * NUM_BLOCK; tid++)
+		pi += sumHost[tid];
+	pi *= step;
 
-  double *d_A;
-  cudaMalloc(&d_A, bytes);
+	// Print results
+	cout << "Valor da integral de pi: " << setprecision(15) << pi << endl;
 
-  for (int i = 0; i < array_size; i++) {
-    A[i] = i * dx;
-  }
+	// Cleanup
+	free(sumHost);
+	cudaFree(sumDev);
 
-  cudaMemcpy(d_A, A, bytes, cudaMemcpyHostToDevice);
-  int thr_per_blk = 256;
-  int blk_in_grid = ceil(float(N) / thr_per_blk);
-
-	add_vectors<<<blk_in_grid, thr_per_blk>>>(d_A, array_size);
-
-	free(A);
-  cudaFree(d_A);
-
-	typeof(d_pi) pi;
-  cudaMemcpyFromSymbol(&pi, "d_pi", sizeof(pi), 0, cudaMemcpyDeviceToHost);
-	pi *= dx;
-	cout << "Valor da integral de pi: " << setprecision(10) << pi << endl;
-
-  return 0;
+	return 0;
 }
