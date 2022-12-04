@@ -9,11 +9,6 @@ using namespace std;
 double pi_result = 0;
 mutex pi_mutex;
 
-double f(double x)
-{
-  return 4.0 / (1.0 + x * x);
-}
-
 void interger_pi(double start, double stop, double dx)
 {
   double pi = 0;
@@ -21,7 +16,7 @@ void interger_pi(double start, double stop, double dx)
 
   while (x <= stop)
   {
-    pi += f(x);
+    pi += 4.0 / (1.0 + x * x);
     x = x + dx;
   }
 
